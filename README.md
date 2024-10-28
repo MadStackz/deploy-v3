@@ -1,6 +1,20 @@
 # Deploy Uniswap V3 Script
-
 This package includes a CLI script for deploying the latest Uniswap V3 smart contracts to any EVM (Ethereum Virtual Machine) compatible network.
+
+## Madstackz notes
+Added code to set gasLimit to 12M to match avacloud subnet settings.  There was an error during step 8 for deploying TransparentUpgradeableProxy.  
+Must first deploy WETH9 [contract](https://github.com/gnosis/canonical-weth/blob/master/contracts/WETH9.sol).
+
+# Example usage
+```
+yarn start \
+    -pk 0x[privkey] \
+    -j https://subnets.avacloud.io/c3ed7d43-10bd-4c72-8124-8bd3ef665ee4 \
+    -c 0 \
+    -w9 0x458325F0c672334E36bdB206C3F72e50F4AB8a85 \
+    -ncl BBX \
+    -o 0x540a3972494c96D11ef2204d0B1Af232EeD490F9
+```
 
 ## Licensing
 

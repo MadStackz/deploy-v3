@@ -12,7 +12,7 @@ export default function createDeployLibraryStep({
     if (state[key] === undefined) {
       const factory = new ContractFactory(abi, bytecode, signer)
 
-      const library = await factory.deploy({ gasPrice })
+      const library = await factory.deploy({ gasPrice, gasLimit: 12000000 })
       state[key] = library.address
 
       return [

@@ -21,7 +21,7 @@ export const TRANSFER_PROXY_ADMIN: MigrationStep = async (state, { signer, gasPr
     throw new Error('ProxyAdmin.owner is not signer')
   }
 
-  const tx = await proxyAdmin.transferOwnership(ownerAddress, { gasPrice })
+  const tx = await proxyAdmin.transferOwnership(ownerAddress, { gasPrice, gasLimit: 12000000 })
 
   return [
     {

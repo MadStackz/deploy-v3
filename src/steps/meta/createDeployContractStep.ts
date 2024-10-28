@@ -40,7 +40,7 @@ export default function createDeployContractStep({
 
       let contract: Contract
       try {
-        contract = await factory.deploy(...constructorArgs, { gasPrice: config.gasPrice })
+        contract = await factory.deploy(...constructorArgs, { gasPrice: config.gasPrice, gasLimit: 12000000 })
       } catch (error) {
         console.error(`Failed to deploy ${contractName}`)
         throw error

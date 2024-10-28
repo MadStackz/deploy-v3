@@ -21,7 +21,7 @@ export const TRANSFER_V3_CORE_FACTORY_OWNER: MigrationStep = async (state, { sig
     throw new Error('UniswapV3Factory.owner is not signer')
   }
 
-  const tx = await v3CoreFactory.setOwner(ownerAddress, { gasPrice })
+  const tx = await v3CoreFactory.setOwner(ownerAddress, { gasPrice, gasLimit: 12000000 })
 
   return [
     {
